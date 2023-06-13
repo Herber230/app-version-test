@@ -43,3 +43,14 @@ jobs:
           search_commit_body: false
           # The output method used to generate list of users, 'csv' or 'json'.
           user_format_type: "json"
+
+      - name: Add & Status
+        shell: bash
+        run: |
+          git add .
+          git status
+
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
